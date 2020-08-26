@@ -1,6 +1,6 @@
 const express = require('express');
-const connectDB = require("./config/db");
 const app = express();
+const connectDB = require("./config/db");
 
 ////////// Connecting to Database ///////////////////////////////////
 connectDB();
@@ -10,9 +10,8 @@ connectDB();
 
 // req body parser
 app.use(express.json({ extended: false }));
-
-
 app.get('/', (req, res) => res.send('API Running'));
+/////////////////////////////////////////////////////////////////////
 
 /////////////////// Define Routes ///////////////////////////////////
 app.use('/api/users', require('./routes/api/users'));
