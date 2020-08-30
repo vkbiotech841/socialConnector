@@ -43,7 +43,8 @@ router.post(
         [
             body('status', 'Status is required').not().notEmpty(),
             body('skills', 'Skills is required').not().isEmpty()
-        ]],
+        ]
+    ],
     async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
