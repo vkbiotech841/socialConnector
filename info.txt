@@ -2,3 +2,24 @@
 #npm i express express-validator bcryptjs config gravatar jsonwebtoken mongoose request 
 #npm i -D nodemon concurrently
 #npm run server
+
+
+## React setup
+
+# create react client app
+
+npx create-react-app client
+
+# start react app
+
+npm start
+# To run the client and server using the single command, we are using concurrently.
+# Note: run this following from the root directory. 
+# npm run dev 
+
+# Install some dependency for client. Navigate to the client directory
+npm i axios react-router-dom redux react-rdux redux-thunk redux-devtools-extension moment react-moment
+
+# Install ES7 react/reduct snipped extension
+# shortcuts used:
+# functional or stateless component: racf
