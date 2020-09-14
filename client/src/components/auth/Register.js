@@ -24,6 +24,27 @@ const Register = () => {
             console.log('Password do not match');
         } else {
             console.log(formData);
+            const newUser = {
+                name: name,
+                email: email,
+                password: password
+            }
+
+            try {
+                const config = {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                };
+
+                const body = JSON.stringify(newUser);
+
+                const res = await axios.post('/api/users', body, config);
+                console.log(res.data);
+
+            } catch (err) {
+                console.error(err.response.data);
+            }
         }
     };
 
