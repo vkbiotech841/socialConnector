@@ -1,8 +1,12 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
+// Functional Component 
+// useState is a react hook.
 
 const Register = () => {
+    // setting formData with default value
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -29,8 +33,9 @@ const Register = () => {
             <h1 className="large text-primary">Sign Up</h1>
             <p className="lead">
                 <i className="fas fa-user"></i>
-                 Create Your Account
+                    Create Your Account
             </p>
+
             <form className="form" onSubmit={e => onSubmit(e)}>
                 <div className="form-group">
                     <input
@@ -76,6 +81,7 @@ const Register = () => {
                 </div>
                 <input type="submit" className="btn btn-primary" value="Register" />
             </form>
+
             <p className="my-1">
                 Already have an account?
                 <Link to="/login">Sign In</Link>
