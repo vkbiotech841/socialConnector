@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
 // Functional Component 
 // useState is a react hook.
@@ -24,6 +23,7 @@ const Register = () => {
             console.log('Password do not match');
         } else {
             console.log(formData);
+            console.log("SUCCESS");
         }
     };
 

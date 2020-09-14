@@ -1,6 +1,8 @@
 ## Project initial setup:
 #npm i express express-validator bcryptjs config gravatar jsonwebtoken mongoose request 
 #npm i -D nodemon concurrently
+# npm install --save redux react-redux
+#npm i uuid
 #npm run server
 
 
