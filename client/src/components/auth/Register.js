@@ -1,10 +1,14 @@
 import React, { Fragment, useState } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { setAlert } from '../../actions/alert';
+import PropTypes from 'prop-types'; // shortcut: impt
+
 
 // Functional Component 
 // useState is a react hook.
 
-const Register = () => {
+const Register = ({ setAlert }) => {
     // setting formData with default value
     const [formData, setFormData] = useState({
         name: '',
@@ -20,7 +24,7 @@ const Register = () => {
     const onSubmit = async (e) => {
         e.preventDefault();
         if (password !== password2) {
-            console.log('Password do not match');
+            setAlert('Password do not match', 'danger');
         } else {
             console.log(formData);
             console.log("SUCCESS");
@@ -90,4 +94,17 @@ const Register = () => {
     )
 }
 
-export default Register
+
+Register.prototypes = {
+    setAlert: PropTypes.func.isRequired
+}
+
+export default connect(
+    null,
+    { setAlert }
+)(Register);
+
+// CONNECT()
+// The connect() function connects a React component to a Redux store.
+// It provides its connected component with the pieces of the data it needs from the store, and 
+// the functions it can use to dispatch actions to the store.
